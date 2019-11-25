@@ -20,10 +20,12 @@
 
         if(url.includes(amp)){
             document.body.innerHTML = '<div><img src="https://img.wine.com.br/fenix/image/loading.svg "><h2>Aguarde...</h2></div><style>body{height:100vh;display:flex;align-items:center;justify-content:center;}</style>';
-            gtag('send', 'event', 'Manuteção', fileName, document.referrer, {' event_callback' : function (){
-                alert("Call");
-                window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
-            }});
+            gtag('send', 'event', 'Manuteção', fileName, document.referrer, {
+                'event_callback' : function(){
+                    alert("Call");
+                    window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
+                }
+            });
         }else{
             console.log("NOT Redirect");
         }
