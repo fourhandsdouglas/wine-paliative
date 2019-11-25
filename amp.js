@@ -21,7 +21,8 @@
             document.body.innerHTML = 'Aguarde...';
             ga('send', 'event', 'Erro', 'Manutencao', fileName);
             setTimeout(() => {
-                window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
+                console.log("Redirect");
+                //window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
             }, 1000);
         }
     }, 1000);
