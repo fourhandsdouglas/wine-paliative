@@ -4,7 +4,7 @@
         document.head.appendChild(script);
     }
 
-    function dynamicallyLoadScript("https://www.googletagmanager.com/gtag/js?id=UA-5733415-1");
+    dynamicallyLoadScript("https://www.googletagmanager.com/gtag/js?id=UA-5733415-1");
 
     setTimeout(() => {
         window.dataLayer = window.dataLayer || [];
