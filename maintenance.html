@@ -1,4 +1,4 @@
-    <script>
+<script>
     document.body.style.opacity = "0";
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5733415-1"></script>
@@ -8,8 +8,8 @@
     gtag('js', new Date());
     gtag('config', 'UA-5733415-1', {'optimize_id': 'GTM-NS39JSJ'});
 
-    var url = window.location.pathname;
-    var fileName = url.substring(url.lastIndexOf('/')+1);
+    var pathName = window.location.pathname;
+    var fileName = pathName.substring(pathName.lastIndexOf('/')+1);
     var amp = "&amp;";
     var url = document.URL;
     var hash = window.location.hash;
