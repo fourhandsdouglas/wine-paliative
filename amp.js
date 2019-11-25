@@ -17,8 +17,8 @@
             gtag('send', 'event', 'Manuteção', fileName, document.referrer);
             setTimeout(() => {
                 window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redir");
-            }, 3000);
-        }, 3000);
+            }, 500);
+        }, 1000);
 
         console.log('send', 'event', 'Manuteção', fileName, document.referrer);
             
