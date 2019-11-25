@@ -28,7 +28,6 @@ if(url.includes(amp) && hash != "#redir" && hash != "#redirGag"){
     gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, referrer, {
         'transport': 'beacon',
         'hitCallback' : function(){
-            console.log("Call");
             window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redirGag");
         }
     });
