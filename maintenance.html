@@ -1,37 +1,39 @@
 <script>
-    document.body.style.opacity = "0";
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5733415-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-5733415-1', {'optimize_id': 'GTM-NS39JSJ'});
+document.body.style.opacity = "0";
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5733415-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-5733415-1', {'optimize_id': 'GTM-NS39JSJ'});
 
-    var pathName = window.location.pathname;
-    var fileName = pathName.substring(pathName.lastIndexOf('/')+1);
-    var amp = "&amp;";
-    var url = document.URL;
-    var hash = window.location.hash;
-    if(url.includes(amp) && hash != "#redir" && hash != "#redirGag"){
-        document.body.innerHTML = '<div><img src="https://img.wine.com.br/fenix/image/loading.svg "><h2>Aguarde...</h2></div><style>body{height:100vh;display:flex;align-items:center;justify-content:center;}</style>';
-        
+let pathName = window.location.pathname;
+let fileName = pathName.substring(pathName.lastIndexOf('/')+1);
+let amp = "&amp;";
+let url = document.URL;
+let hash = window.location.hash;
+let referrer = document.referrer;
+    
+if(url.includes(amp) && hash != "#redir" && hash != "#redirGag"){
+    document.body.innerHTML = '<div><img src="https://img.wine.com.br/fenix/image/loading.svg"><h2>Aguarde...</h2></div><style>body{height:100vh;display:flex;align-items:center;justify-content:center;}</style>';
+
+    setTimeout(() => {
+        gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, referrer);
         setTimeout(() => {
-            gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, document.referrer);
-            setTimeout(() => {
-                window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redir");
-            }, 500);
-        }, 1000);
-            
-        gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, document.referrer, {
-            'transport': 'beacon',
-            'hitCallback' : function(){
-                console.log("Call");
-                window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redirGag");
-            }
-        });
-    }else{
-        gtag('send', 'event', 'Manuteção', fileName, document.referrer);
-    }
-    document.body.style.opacity = "1";
-    </script>
+            window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redir");
+        }, 500);
+    }, 1000);
+
+    gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, referrer, {
+        'transport': 'beacon',
+        'hitCallback' : function(){
+            console.log("Call");
+            window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redirGag");
+        }
+    });
+}else{
+    gtag('send', 'event', 'Manuteção', fileName, referrer);
+}
+document.body.style.opacity = "1";
+</script>
