@@ -19,7 +19,7 @@
 
         if(url.includes(amp)){
             document.body.innerHTML = 'Aguarde...';
-            ga('send', 'event', 'Erro', 'Manutencao', fileName);
+            gtag('send', 'event', 'Erro', 'Manutencao', fileName);
             setTimeout(() => {
                 console.log("Redirect");
                 //window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
