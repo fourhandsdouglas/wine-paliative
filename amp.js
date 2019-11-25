@@ -6,9 +6,10 @@
 
     dynamicallyLoadScript("https://www.googletagmanager.com/gtag/js?id=UA-5733415-1");
 
-    var url = window.location.pathname;
-    var fileName = url.substring(url.lastIndexOf('/')+1);
+    var pathname = window.location.pathname;
+    var fileName = pathname.substring(pathname.lastIndexOf('/')+1);
     var amp = "&amp;";
+    var url = document.URL;
 
     setTimeout(() => {
         window.dataLayer = window.dataLayer || [];
