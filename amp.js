@@ -1,3 +1,4 @@
+    document.body.style.opacity = "0";
     function dynamicallyLoadScript(url) {
         var script = document.createElement("script");
         script.src = url;
@@ -27,4 +28,5 @@
         }else{
             console.log("NOT Redirect");
         }
+        document.body.style.opacity = "1";
     }, 1000);
