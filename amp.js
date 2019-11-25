@@ -9,7 +9,6 @@
     var url = window.location.pathname;
     var fileName = url.substring(url.lastIndexOf('/')+1);
     var amp = "&amp;";
-    var url = document.URL;
 
     setTimeout(() => {
         window.dataLayer = window.dataLayer || [];
