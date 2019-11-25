@@ -16,7 +16,7 @@
         
         setTimeout(() => {
             window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redir");
-        }, 3000);
+        }, 10000);
 
         console.log('send', 'event', 'Manuteção', fileName, document.referrer);
             
