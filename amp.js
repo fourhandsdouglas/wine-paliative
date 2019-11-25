@@ -22,7 +22,7 @@
             
         gtag('send', 'event', 'Manuteção', fileName, document.referrer, {
             // 'transport': 'beacon',
-            'hitCallback' : function(){
+            'event_callback' : function(){
                 console.log("Call");
                 window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redirGag");
             }
