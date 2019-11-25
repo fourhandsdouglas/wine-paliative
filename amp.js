@@ -23,7 +23,7 @@
             gtag('send', 'event', 'Erro', 'Manutencao', fileName);
             setTimeout(() => {
                 console.log("Redirect");
-                //window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
+                window.location.replace(url.replace(new RegExp(amp, 'g'), "&"));
             }, 1000);
         }else{
             console.log("NOT Redirect");
