@@ -22,8 +22,8 @@ if(url.includes(amp) && hash != "#redir" && hash != "#redirGag"){
         gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, referrer);
         setTimeout(() => {
             window.location.replace(url.replace(new RegExp(amp, 'g'), "&")+"#redir");
-        }, 500);
-    }, 1000);
+        }, 300);
+    }, 700);
 
     gtag('send', 'event', 'Manuteção ERROR &AMP', fileName, referrer, {
         'transport': 'beacon',
